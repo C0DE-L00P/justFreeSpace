@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#DDDDDD">
+
+    <Button
+        android:id="@+id/showBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show" />
+
+    <ImageView
+        android:id="@+id/shared_element_img"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/showBtn"
+        android:transitionName="transition"
+        android:src="@drawable/suit"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_settings_cube"
+        android:text="Settings"
+        android:textColor="#fff"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:drawableEnd="@drawable/ic_settings_black_24dp"/>
+
+</RelativeLayout>

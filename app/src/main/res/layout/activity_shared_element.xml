@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="16dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SharedElementActivity">
+
+
+    <ImageView
+        android:id="@+id/shared_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:transitionName="transition"
+        tools:src="@drawable/suit" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/White_Gray_transparent"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deal_title"
+            android:text="Swedish"
+            android:textStyle="bold"
+            android:textColor="@color/darkBlue"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deal_state"
+            android:text="Rent"
+            android:textStyle="bold"
+            android:textColor="@color/Gray"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deal_price"
+            android:text="350 EGP"
+            android:textColor="@color/Gray"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottomSheetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#D8D8D8"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="60dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <ImageButton
+            android:id="@+id/admireBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/White_Gray"
+            android:src="@drawable/ic_favorite" />
+
+        <ImageButton
+            android:id="@+id/orderBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="2dp"
+            android:padding="10dp"
+            android:background="@color/White_Gray"
+
+            android:src="@drawable/ic_local_grocery" />
+
+            <ImageButton
+                android:id="@+id/commentsBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_marginEnd="2dp"
+                android:background="@color/White_Gray"
+                android:src="@drawable/ic_comment" />
+
+            <ImageButton
+                android:id="@+id/writeCommentBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_marginEnd="2dp"
+                android:background="@color/White_Gray"
+                android:src="@drawable/ic_edit" />
+        </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/comments_view_pager"/>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="visible"
+            android:id="@+id/comment_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#fff"
+            app:cardCornerRadius="16dp">
+            
+            <TextView
+                android:id="@+id/text_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Awersome suit guys hope you good luck "
+                android:textSize="22sp"
+                android:padding="16dp"
+                android:textColor="@color/darkBlue"
+                android:gravity="center"/>
+            <EditText
+                android:id="@+id/comment_edit_text"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:padding="16dp"
+                android:textColor="@color/darkBlue"
+                android:minHeight="60dp"/>
+                
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout android:visibility="gone"
+            android:id="@+id/order_layout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="10dp">
+
+            <RadioGroup
+                android:id="@+id/stateRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/dummy_text1"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="Rent"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="17sp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buy"
+                    android:textColor="@color/darkBlue"
+                    android:layout_marginEnd="16dp"
+                    android:textSize="17sp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/dummy_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/stateConstant"
+                android:layout_alignParentEnd="true"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/stateConstant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="10dp"
+                android:text="State"
+                android:textColor="@color/darkBlue"
+                android:textSize="30sp"
+                android:layout_above="@+id/colorConstant"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/colorRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/dummy_text2"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="Grey"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="17sp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Black"
+                    android:textColor="@color/darkBlue"
+                    android:layout_marginEnd="16dp"
+                    android:textSize="17sp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blue"
+                    android:textColor="@color/darkBlue"
+                    android:layout_marginEnd="16dp"
+                    android:textSize="17sp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/dummy_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/colorConstant"
+                android:layout_alignParentEnd="true"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/colorConstant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
+                android:text="Color"
+                android:textColor="@color/darkBlue"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/sizeRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/dummy_text3"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="XL"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="17sp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XXL"
+                    android:textColor="@color/darkBlue"
+                    android:layout_marginEnd="16dp"
+                    android:textSize="17sp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/dummy_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/sizeConstant"
+                android:layout_alignParentEnd="true"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/sizeConstant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/colorConstant"
+                android:text="Size"
+                android:textColor="@color/darkBlue"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+            
+        
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="Submit"
+            android:visibility="gone"
+            android:id="@+id/submitBtn"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/shape_bg"
+            android:layout_marginBottom="20dp"/>
+            
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.cardview.widget.CardView>

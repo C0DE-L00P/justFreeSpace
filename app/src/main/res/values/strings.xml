@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Secondary</string>
+    <string name="priceTag"><strike>400</strike> 300</string>
+</resources>
